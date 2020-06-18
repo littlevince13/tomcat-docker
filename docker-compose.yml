@@ -1,0 +1,12 @@
+version: "3"
+services:
+  tomcat:
+    hostname: tomcat
+    image: tomcat:8
+    volumes:
+      - "./data/SampleWebApp.war:/usr/local/tomcat/webapps/SampleWebApp.war"
+    ports:
+      - "38000:8080"
+    entrypoint:
+      - "catalina.sh"
+      - "run"
